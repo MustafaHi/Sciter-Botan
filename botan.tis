@@ -1,0 +1,22 @@
+if (!Botan) include library "sciter-botan";
+
+function Botan.password(method, data, hash = "") {
+    var prom = promise();
+    function CB(data, pass = true) { prom(pass, [data]); }
+    Botan.passwordN(CB, method, data, hash);
+    return prom;
+}
+
+function Botan.cipher(method, data, key, iv = "") {
+    var prom = promise();
+    function CB(data, pass = true) { prom(pass, [data]); }
+    Botan.cipherN(CB, method, data, key, iv);
+    return prom;
+}
+
+function Botan.decipher(method, data, key, iv) {
+    var prom = promise();
+    function CB(data, pass = true) { prom(pass, [data]); }
+    Botan.decipherN(CB, method, data, key, iv);
+    return prom;
+}
