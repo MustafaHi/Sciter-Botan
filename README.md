@@ -13,7 +13,7 @@ Sciter binding for [Botan cryptography library](https://github.com/randombit/bot
 Provide easy to use API for Botan to Sciter's script
 
 ```js
-var key = Botan.hash("SHA-256", "secret");
+var key  = Botan.hash("SHA-256", "secret");
 var data = "will be secret";
 
 const crypto = await Botan.cipher("AES-256/CBC", data, key);

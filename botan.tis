@@ -1,3 +1,6 @@
+//| Sciter-Botan 2.0
+//| https://github.com/MustafaHi/Sciter-Botan
+
 if (!Botan) include library "sciter-botan";
 
 function Botan.password(method, data, hash = "") {

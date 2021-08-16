@@ -1,6 +1,12 @@
-import { loadLibrary } from "@sciter";
+//| Sciter-Botan 2.0
+//| https://github.com/MustafaHi/Sciter-Botan
 
-globalThis.Botan = loadLibrary("sciter-botan");
+if (!globalThis.Botan) 
+{
+    import { loadLibrary } from "@sciter";
+    globalThis.Botan = loadLibrary("sciter-botan");
+}
+
 
 Botan.password = function(method, data, hash = "") {
     return new Promise((resolve, reject) => {
